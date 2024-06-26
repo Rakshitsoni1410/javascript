@@ -40,9 +40,27 @@ const users = [
 ]
 //console.log(users[0].email); // Output: "r@gmail.com"
 //console.log(users[1].email); // Output: "s@gmail.com"
-console.log(tinderUser);
+/*console.log(tinderUser);
 
 console.log(Object.keys(tinderUser));
 console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
-console.log(tinderUser.hasOwenproperty('isLoggedIn'));
+console.log(Object.entries(tinderUser));*/
+//console.log(tinderUser.hasOwenproperty('isLoggedIn'));
+
+const course = {
+    coursename : "js in gujarati",
+    price :"100",
+    courseInstructor :"rakshit",
+
+}
+//course.courseInstructor
+const{courseInstructor : instructor}=course
+console.log(courseInstructor);
+/*{
+    "name" : "rakshit",
+    "coursename" :" js in eng",
+    "price" :"free"
+
+}*/
+
+
