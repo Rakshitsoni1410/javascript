@@ -29,4 +29,31 @@ function loginUser(username  ="same"){
     return `${username}just logged in`
 }
 //console.log(loginUser("rakshit"));
-console.log(loginUser("raj"));
+//console.log(loginUser("raj"));
+
+function calculateCartprice(...num1){
+    return num1;
+}
+//console.log(calculateCartprice(200,2136,18));
+
+const user={
+    username:"rakshit",
+    price :299,
+
+}
+function handleObject (anyobject){
+
+    console.log(`Username is ${anyobject.username}and price is ${anyobject.price}`);
+}
+//handleObject(user)
+handleObject({
+    username:"rakshit",
+    price:309
+})
+
+const myNewArray =[200,400,200,600]
+
+function returnSec(getArray) {
+    return getArray[3]
+}
+console.log(returnSec(myNewArray));
