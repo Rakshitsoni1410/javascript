@@ -8,15 +8,46 @@
 <body>
     <h1> maja ma </h1>
     <button id="start">start</button>
-    <button id ="stop">stop</button>
+    <button id="stop">stop</button>
+
+    <script>
+        let intervalId; // Declare the intervalId variable in a broader scope
+
+        const sayDate = function(str) {
+            console.log(str, new Date().toLocaleString()); // Log the date in a readable format
+        }
+
+        const startInterval = function() {
+            // Start the interval if it's not already running
+            if (!intervalId) {
+                intervalId = setInterval(sayDate, 1000, "hi");
+            }
+        }
+
+        const stopInterval = function() {
+            // Clear the interval if it's running
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null; // Reset the intervalId
+            }
+        }
+
+        // Add event listeners to the buttons
+        document.getElementById("start").addEventListener("click", startInterval);
+        document.getElementById("stop").addEventListener("click", stopInterval);
+
+        // Random color function (not used in the current code)
+        const randomColor = function() {
+            const hex = "0123456789ABCDEF";
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Example of how to use the random color function
+        console.log(randomColor());
+    </script>
 </body>
-<script>
-    const sayDate =function(str){
-        console.log(str,Date.now());
-        
-    }
-    setInterval(sayDate,1000,"hi")
-     const intervalId =setInterval(sayDate,1000,"hi")
-    clearInterval(intervalId)
-</script>
 </html>
