@@ -9,4 +9,4 @@ const PromiseOne = new Promise(function (resolve, reject) {
 
 PromiseOne.then(function() {
     console.log("promise consumed");
-});
+}); 
