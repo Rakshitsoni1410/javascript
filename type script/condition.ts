@@ -1,9 +1,10 @@
-function isEven(num: number):string{
-    if(num%2==0){
+function isEven(num: number): string {
+    if (num % 2 === 0) {
         return "Even";
-    }else{
+    } else {
         return "Odd";
     }
-} 
+}
+
 console.log(isEven(4));
 console.log(isEven(7));
