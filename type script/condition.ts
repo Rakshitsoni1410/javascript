@@ -1,10 +1,7 @@
-function isEven(num: number): string {
-    if (num % 2 === 0) {
-        return "Even";
-    } else {
-        return "Odd";
-    }
+let num :number = 10;
+if(num %2 === 0){
+    console.log("Even number")
 }
-
-console.log(isEven(4));
-console.log(isEven(7));
+else{
+    console.log("Odd number")
+}   

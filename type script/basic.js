@@ -1,4 +1,6 @@
-var userName = "rakshit";
-var age = 22;
+var username = "John";
+var age = 30;
 var isStudent = true;
-console.log("Name: ".concat(userName, ", Age: ").concat(age, ", Is Student: ").concat(isStudent));
+console.log("Name", username);
+console.log("Age", age);
+console.log("Is Student", isStudent);
