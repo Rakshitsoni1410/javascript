@@ -1,0 +1,24 @@
+POST http://localhost:3000/add
+Content-Type: application/json
+
+{
+  "name": "rtr",
+  "email": "r11@gmail.com"
+}
+
+###
+
+GET http://localhost:3000/users
+
+###
+
+PUT http://localhost:3000/update/69d5f8e8d18c327ec8ad5f65
+Content-Type: application/json
+
+{
+  "name": "rr"
+}
+
+###
+
+DELETE http://localhost:3000/delete/69d5f8e8d18c327ec8ad5f65
