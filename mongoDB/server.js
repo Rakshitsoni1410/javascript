@@ -1,44 +1,45 @@
 const express = require('express');
-const mongoose = require('mongoose');
-
+const mogoose = require('mongoose');
 const app = express();
 app.use(express.json());
 
-// MongoDB connection
-mongoose.connect('mongodb://127.0.0.1:27017/rrs')
-.then(() => console.log('Connected to MongoDB'))
-.catch((err) => console.error('Failed to connect to MongoDB', err));
+mogoose.connect('mongodb://127.0.0.1:27017/userDB')
+.then(()=>console.log("Connected" ))
+.catch((err)=>console.log(err));
 
 
-//model
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
+const stSchema = new mogoose.Schema({
+    name : String,
+    age:Number,
+    city:String
+})
+const User = mogoose.model('User',stSchema);
 
-});
-const User = mongoose.model('User', userSchema);
-//creat 
 app.post('/add',async(req,res)=>{
     const data = new User(req.body);
     await data.save();
-    res.send(data);
+    res.send("Data added");
 })
-//read 
-app.get('/users',async(req,res)=>{
+app.get('/get',async(req,res)=>{
     const data = await User.find();
     res.json(data);
-});
-//update 
-app.put('/update/:id',async(req,res)=>{
-    const data = await User.findByIdAndUpdate(req.params.id,req.body,{new:true});
-    res.json(data);
-});
-//delete 
+})
 app.delete('/delete/:id',async(req,res)=>{
     await User.findByIdAndDelete(req.params.id);
-    res.send('User deleted');
-}); 
-// Start server
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+    res.send("Data deleted");
 });
+
+app.put('/update/:id', async (req,res)=>{
+    const data = await User.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+    );
+
+    console.log(data); // 👈 check terminal
+
+    res.json(data);
+});
+
+
+app.listen(4000,()=>console.log("Server is running on port 4000"));
